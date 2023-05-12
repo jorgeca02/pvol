@@ -1,0 +1,13 @@
+.post{
+  border: 4px solid blacks;
+}
+.postTitle{
+  font-size: larger;
+  font-weight: bolder;
+}
+.postImage{
+  height: 150px;
+  max-width: 150px;
+  overflow: hidden;
+  object-fit:scale-down
+}
