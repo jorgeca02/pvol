@@ -63,7 +63,7 @@ const post:NextPage<{data:{post:post}}> = ({data}) => {
       <div className="post" >
             <div className="postTitle">{data.post.title}</div>
             <img className="postImage" src={data.post.imageUrl} alt={data.post.title} />
-            <div className="postBody">{data.post.body}</div>
+            <div className="postBody"dangerouslySetInnerHTML={{__html:data.post.body}}></div>
             <div className="postCommentsTitle">Comments</div>
             <div className="postComments">
               {data.post.comments.map((comment) => (

@@ -2,6 +2,7 @@ import { getClientSSR } from "@/utils/apolloClient";
 import { GetServerSideProps, NextPage } from 'next';
 import { gql } from "@apollo/client";
 import Link from "next/link";
+import { useState } from "react";
 
 
 type posts= {
@@ -13,8 +14,9 @@ type posts= {
       updatedAt: string
       }[]
 
-
+      
 export const getServerSideProps: GetServerSideProps = async () => {
+  
   const query = gql`
   query Query {
     posts{
@@ -39,7 +41,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 }
 
 const posts:NextPage<{data:{posts:posts}}> = ({data}) => { 
-   
+  
     return (
       <>
         {data.posts.map((post) => (
